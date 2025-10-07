@@ -19,6 +19,35 @@ A Node.js/Express backend for managing players, games, and scores in a game stud
 
 ---
 
+## Set up project
+- Clone the repository:
+
+    git clone
+    https://github.com/KunnikarB/game-studio-api.git
+    <br>
+    cd game-studio-api
+
+- Install dependencies:
+  
+    npm install
+
+- Create a .env file in the project root:
+  <pre>
+    DB_USER=your_db_user
+    DB_PASSWORD=your_db_password
+    DB_HOST=localhost
+    DB_DATABASE=your_database
+    DB_PORT=5432
+  </pre>
+
+- Start the server:
+
+  npm run dev
+
+- Server runs at http://localhost:5500
+
+
+
 ### validated inputs using [Zod]
 <img width="824" height="386" alt="Zod-test-player" src="https://github.com/user-attachments/assets/780bc4dd-43e9-4043-a3b7-ae123ac889aa" />
 
