@@ -1,7 +1,7 @@
 services:
   db:
     container_name: postgres_container
-    image: postgres
+    image: postgres:latest
     restart: always
     environment:
       POSTGRES_USER: root
@@ -10,7 +10,7 @@ services:
     ports:
       - "5432:5432"
     volumes:
-      - postgres_data:/var/lib/postgresql/data
+      - postgres_data:/var/lib/postgresql/data  # keep this line
 
   pgadmin:
     container_name: pgadmin4_container
@@ -21,6 +21,11 @@ services:
       PGADMIN_DEFAULT_PASSWORD: root
     ports:
       - "8080:80"
+    depends_on:
+      - db
+    volumes:
+      - pgadmin_data:/var/lib/pgadmin
 
 volumes:
-  postgres_data:
+  postgres_data:   # must match the name of your old volume
+  pgadmin_data:
